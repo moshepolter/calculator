@@ -1,10 +1,187 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>index</title>
-  </head>
-  <body>
-    <h1>hello world</h1>
-  </body>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pretentious Calc Project butsome day you will so, oh yes you will see</title>
+    <style>
+      {text-align:center; margin: 0; padding:0;}
+
+.container {
+width:80%;
+height: 40rem;
+margin: auto;
+}
+
+.izquierda {
+float:left;
+height: 40rem; width: 30%;
+background-color: violet;
+}
+
+.izquierda p {
+padding: 2rem 0;
+font-size: 3.5rem;
+font-family: Serif;
+color: white;
+font-style: italic;
+}
+
+.izquierda h2 {
+padding: 0 2rem;
+font-size: 1.4rem;
+font-family: Serif;
+font-style: oblique;
+color: white;
+}
+
+
+.centro {
+float: left;
+padding: 0 4%;
+height: 40rem; width: 400px;
+display: inline-block;
+}
+
+.calculadora {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+align-content: space-around;
+height: 40rem;
+border: 1px solid blue;
+padding: 50px;
+}
+
+
+.centro-arriba {width: 100%; height: 10rem; padding-top: 5%;}
+.display {width: 80%; background-color: white; margin: auto; font-size:5.5rem; color: black; border: 2px solid violet;}
+.botones {display:flex; justify-content: center; height: 30rem; flex-wrap: wrap; align-content: flex-start; font-size: 2rem; font-family: Sans-serif; color: white;}
+.digito {margin: 6% 6%;width: 40px; height: 50px; background-color: violet; border-radius: 5px;}
+
+
+.derecha {
+float: left;
+height: 40rem; width: 30%;
+padding-top:2rem;
+}
+
+.derecha p
+{
+font-style: italic;
+font-family: Serif;
+color:violet;
+font-size: 2rem;
+padding-bottom: 2%;
+background-color: #fff;
+}
+.r{
+ background-color: red;
+}
+
+@media only screen and (max-width:480px){
+.izquierda
+ {
+ display: none;
+ }
+
+.derecha
+ {
+ display: none;
+ }
+}
+
+    </style>
+</head>
+<body>
+    <!--calculator-->
+    <div class="container">
+        <div class="izquierda">
+            <p>The Little Calculator that Man, Really Tried Hard</p>
+            <h2>An enthusiastic attempt towards non-philantropic goals in the arts of coding</h2>
+        </div>
+        <!-- este es el material nuevo donde subdividimos la DIV del calc, CENTRO, end dos partes, una pal display y la otra para los botones
+        <div class="centro">
+            <div class="calculadora">
+                <div class="display">18</div>
+                <div class="digito">1</div>
+                <div class="digito">2</div>
+                <div class="digito">3</div>
+                <div class="digito">4</div>
+                <div class="digito">5</div>
+                <div class="digito">6</div>
+                <div class="digito">7</div>
+                <div class="digito">8</div>
+                <div class="digito">9</div>
+                <div class="digito">10</div>
+                <div class="digito">11</div>
+                <div class="digito">12</div>
+                <div class="digito">13</div>
+                <div class="digito">14</div>
+                <div class="digito">15</div>
+                <div class="digito">16</div>
+                <div class="digito">17</div>
+                <div class="digito">18</div>
+            </div>
+        </div>-->
+        <div class="centro">
+            <div class="centro-arriba">
+                <div class="display" id="ei">18</div>
+            </div>
+            <div class = "botones">
+                <div class="digito" id="1" onclick="number(1)">1</div>
+                <div class="digito" id="2" onclick="number(2)">2</div>
+                <div class="digito" id="3" onclick="number(3)">3</div>
+                <div class="digito r" id="C" onclick="c()">C</div>
+                <div class="digito" id="4" onclick="number(4)">4</div>
+                <div class="digito" id="5" onclick="number(5)">5</div>
+                <div class="digito" id="6" onclick="number(6)">6</div>
+                <div class="digito" style="background-color:darkblue" id="/">/</div>
+                <div class="digito" id="7" onclick="number(7)">7</div>
+                <div class="digito" id="8" onclick="number(8)">8</div>
+                <div class="digito" id="9" onclick="number(9)">9</div>
+                <div class="digito" style="background-color:darkblue" id="pl">+</div>
+                <div class="digito" id="0" onclick="number(0)">0</div>
+                <div class="digito" style="background-color:darkblue" id="*">*</div>
+                <div class="digito" style="background-color:darkblue" id="-">-</div>
+                <div class="digito" style="background-color:gray">=</div>
+            </div>
+        </div>
+        <div class="derecha">
+            <p>IN REALTIME COLOR</p>
+            <p>TEN (10) DIGITS</p>
+            <p>ADDS !</p>
+            <p>SUBSTRACTS !</p>
+            <p>MULTIPLIES !</p>
+            <p>DIVIDES !</p>
+            <p>ALMOST FREE !</p>
+            <p style=" font-size: 10px; font-weight: bold; color: black; font-style: oblique;">&copy; all right reserved</p>
+        </div>
+    </div>
+<script type="text/javascript">
+  //amount of times clicked
+let count=0
+let val1 = ""
+let val2 = ""
+//function runs when any number is clicked
+function number(number_value){
+    set_number_value(number_value, val1)
+    console.log(number_value)
+}
+//clears whatever was clicked
+//   let final = document.getElementById("ei").innerHTML = val1
+//take in number
+//if numberString is more than 10 digits long
+//add the number to the end of a number string
+
+function set_number_value(number, value){
+    if(value.length < 10){
+        value = value + number
+    }
+    //console.log(number)
+}
+function c(){
+    window.location("file:///C:/Users/moshe_utzfyrr/OneDrive/Documents/md.html")
+}
+</script>
+</body>
 </html>
