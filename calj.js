@@ -18,7 +18,7 @@ function set_number_value(number, value){
         value = value + number
     }
    //console.log(number)
-   document.getElementById("ei").innerHTML = val1
+   //document.getElementById("ei").innerHTML = val1
 }
 function c(){
     window.location("file:///C:/Users/moshe_utzfyrr/OneDrive/Documents/md.html")
